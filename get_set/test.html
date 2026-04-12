@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="p1" nom="OFPPT2025" >ceci est paragraphe </p>
+    <button onclick="lAtre()">lire l'attrebute</button>
+    <button onclick="mAtre()">Modifier l'attrebute 'nom'</button>
+    <script>
+        function lAtre(){
+            let element=document.getElementById("p1");
+            let value= element.getAttribute("nom");
+            alert("la valeur d'attrebute 'nom' " + value)
+        }
+        function mAtre(){
+        let element=document.getElementById("p1");
+        let value=element.setAttribute("nom" , "OFPPT2026 BB");
+        alert("La valeur modiffier de 'nom' ")
+        }
+    </script> -->
+    <p id="ID12">texte de paragrephe ID12</p>
+    <input type="text" name="groupe" value="A">
+    <input type="text" name="groupe" value="B" style="background-color: red;">
+    <div>Premier div</div>
+    <div>Deuxiem div</div>
+    <button onclick="test()">tester</button>
+    <script>
+        function test(){
+            let parID=document.getElementById("ID12");
+            alert("par ID : "+parID.innerHTML)
+            let parNom=document.getElementsByName("groupe");
+            alert("par nome : "+parNom[1].style.backgroundColor +" / type : "+parNom[0].type)
+        }
+    </script>
+</body>
+</html>

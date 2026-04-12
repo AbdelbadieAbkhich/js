@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="Enter first number">
+    <button onclick="EnOrder()">miseEnOrder</button>
+    <input type="text" id="input2">
+    <script>
+        function EnOrder(){
+            var input=document.getElementById("input1").value;
+            let inv=input.split("").sort().join("");
+            document.getElementById("input2").value=inv;
+        }
+    </script>
+</body>
+</html>

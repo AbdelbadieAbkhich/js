@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <form action="" method="get">
+            <fieldset>
+                <legend>
+                    INFORMATIONS ETUDIANT
+                </legend>
+                <div>
+                    <label for="">nom *:</label>
+                    <input type="text" name="Nom" placeholder="Nom" id="Nom"><br><span id="span_nom"></span>
+                </div><br>
+                <div>
+                    <label for="">Prenom *:</label>
+                    <input type="text" name="prenom" placeholder="Prenom" id="prenom"><br><span id="span_prenom"></span>
+                </div><br>
+                <div>
+                    <label for="">CIN *:</label>
+                    <input type="text" name="CIN" placeholder="CIN" id="CIN"><br><span id="span_CIN"></span>
+                </div><br>
+                <div>
+                    <label for="">Email *:</label>
+                    <input type="email" name="Email" placeholder="Email" id="email">
+                </div><br>
+            </fieldset>
+            <fieldset>
+                <legend>TYPE DE FORMATION</legend>
+                <div>
+                    <label for="">Niveau: </label>
+                    <input type="radio" name="Niv" id="Secondaire" checked>
+                    <label for="">Secondaire </label>
+
+                    <input type="radio" name="Niv" id="Universitaire">
+                    <label for="">Universitaire</label>
+
+                    <input type="radio" name="Niv" id="Autre">
+                    <label for="">Autre</label>
+                </div><br>
+                <div>
+                    <label for="">Modules de formation</label><br>
+                    <select name="module_formation" id="select"  multiple >
+                        <option value="bur"  >Bureautique</option>
+                        <option value="reseau">SE et Reseaux info</option>
+                        <option value="TJC">TJC</option>
+                    </select>
+                </div><br>
+                <input type="submit" id="Envoyer" value="Envoyer">
+                <input type="reset" id="Annuler" value="Annuler">
+
+
+            </fieldset>
+        </form>
+    </fieldset>
+    <script>
+        let Envoyer=document.getElementById("Envoyer")
+        Envoyer.addEventListener("click",
+        function verifier(event){
+        let nom=document.getElementById("Nom");
+        let prenom=document.getElementById("prenom");
+        let CIN=document.getElementById("CIN");
+        let email=document.getElementById("email");
+        if (nom.value==="" || prenom.value==="" || CIN.value==="" || email.value==="" ){
+            alert("erreur, remplire tout la formulaire")
+            event.preventDefault();
+        }
+        if (nom.value!=nom.value.toUpperCase()){
+            let span=document.getElementById("span_nom");
+            span.innerText="(le nom doit etre majuscul )*"
+            span.style.color="red"
+            span.style.fontSize="11px"
+            event.preventDefault();
+        }else{
+            let span=document.getElementById("span_nom");
+            span.innerText=""
+            span.style.color=""
+        }
+        let pre=prenom.value;
+        if(pre!=="" && pre[0]!==pre[0].toUpperCase()){
+            let span_prenom=document.getElementById("span_prenom");
+            span_prenom.innerText="(la premier lettre doit etre on majuscule) *"
+            span_prenom.style.color="red"
+            span_prenom.style.fontSize="9px"
+            event.preventDefault();
+        }else{
+            let span_prenom=document.getElementById("span_prenom");
+            span_prenom.innerText=""
+            span_prenom.style.color=""
+        }
+        if (nom.value.length>15 || nom.value.length<3 ){
+             let span=document.getElementById("span_nom");
+            span.innerText="(erreur, le nom plus de 15 lettres ou mois de 3 lettres )*"
+            span.style.color="red";
+            span.style.fontSize="10px";
+            event.preventDefault();
+        }
+        if (pre.length>15 || pre.length<3 ){
+            let span_prenom=document.getElementById("span_prenom");
+            span_prenom.innerText="(erreur, le nom plus de 15 lettres ou mois de 3 lettres ) *"
+            span_prenom.style.color="red";
+            span_prenom.style.fontSize="9px";
+            event.preventDefault();
+        }
+        if (CIN.value !== "" && !/^[A-Za-z]{1,2}[0-9]{3,6}$/.test(CIN.value))
+        {
+            let span_CIN=document.getElementById("span_CIN");
+            span_CIN.innerText="(CIN invalide (1-2 lettres + 3 à 6 chiffres)) *"
+            span_CIN.style.color="red"
+            span_CIN.style.fontSize="9px"
+
+            event.preventDefault();
+        }
+
+    })
+
+    </script>
+</body>
+</html>

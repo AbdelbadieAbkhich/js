@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercice DOM</title>
+</head>
+<body>
+    <form action="">
+        <label for="">nom balise:</label><input type="text"><button onclick="afficher()">afficher</button>
+    </form>
+</body>
+<script>
+    function afficher(){
+        // quetion 2/1
+    let inp=document.querySelector("input").value;
+    let resu=document.querySelector(inp);
+    if (!resu){
+        alert( inp+" n'existe pas")
+    }else{
+        alert( resu.tagName)
+    }
+
+    // quetion 2/2
+    let enf=resu.children;
+    let num_enf=[];
+    for (let i=0;i<enf.length; i++){
+        num_enf.push(enf[i].tagName);
+
+    }
+   for(let i=0; i<num_enf.length;i++){
+    alert("l'enfant de "+ inp +" c'est :" +num_enf[i] )
+   }
+//    2/3
+    let frere_avant=resu.previousElementSibling;
+    if (frere_avant ){
+         alert(frere_avant.tagName)
+    }else{
+        alert("aucien frere")
+    }
+     let parent=resu.parentNode;
+    if (parent ){
+         alert(parent.tagName)
+    }else{
+        alert("aucien parent")
+    }
+    
+    }
+</script>
+</html>

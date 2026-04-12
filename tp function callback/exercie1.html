@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="" onmouseover="afficher()" alt="logo">
+    <button onclick="afficher()"> click ici pour afficher</button> -->
+    <input type="text" id="nom" placeholder="saisir votre nom "><span id="span1"></span>
+    
+    <input type="text" id="email" placeholder="saisir votre email "><span id="span2"></span>
+    <input type="number" id="age" placeholder="saisir votre age "><span id="span3"></span>
+    <button onclick="valider()">valide</button>
+
+
+    <script>
+        // function afficher(){
+        //     alert("hey, how was going");
+        // }
+
+        // ==== question 2 ,1=========
+
+        // function afficher(){
+        //     let a = new Date().getHours()
+        //     switch (true) {
+        //          case (a>=6 && a<=12):
+        //             alert("BONJOUR");
+        //             break;
+        //          case (a>=13 && a<=17):
+        //             alert("Happy Afternoon");
+        //             break;
+        //         default :
+        //             alert("Heureuse soirée ")    
+        //     }
+        //     }
+        
+        // afficher()
+        // ======question 2 ,2===========
+        // let  a= prompt("saisire un nom") , b=confirm("voulez-vous confirmer ce nom");
+        // if (b){
+        //     alert("bonjour "+a +"!");
+        // }else {alert("bonjour inconnu !!");}
+
+        // ======question 3=========
+        // let tab =["Morocco" ,"Palestine" , " china" , "usa" , "Russia"];
+        // let resu =Math.floor(Math.random()*tab.length) ;
+        // alert(tab[resu])
+
+        // +++++++++++++++++ Exercice4 : Validation du formulaire :+++++++++++++++++++++++++
+        
+        function verifNom(x){
+            let y=x.length;
+            let z=(y>2 && y<25)? true : false;
+            return z;
+        }
+        function verifEMail(x){
+            let a= x.includes("@")
+            
+            return a;
+        }
+        function verifAge(x){
+            let a=Number(x);
+            return (a>5 && a<100);
+
+        }
+        function valider(){
+            let nom=document.getElementById("nom").value;
+            let mail=document.getElementById("email").value;
+            let age=document.getElementById("age").value;
+
+            if (!verifNom(nom)){
+                document.getElementById("nom").style.backgroundColor="yellow";
+                let a= document.getElementById("span1");
+                a.textContent="*";
+                a.style.color="red";
+            }else{
+                document.getElementById("nom").style.backgroundColor="";
+                let a= document.getElementById("span1");
+                a.textContent="";
+                a.style.color="";
+            }
+            if (!verifEMail(mail)){
+                document.getElementById("email").style.backgroundColor="yellow";
+                let a= document.getElementById("span2");
+                a.textContent="*";
+                a.style.color="red";
+            }else{
+                document.getElementById("email").style.backgroundColor="";
+                let a= document.getElementById("span2");
+                a.textContent="";
+                a.style.color="";
+            }
+            if(!verifAge(age)){
+                document.getElementById("age").style.backgroundColor="yellow";
+                let a= document.getElementById("span3");
+                a.textContent="*";
+                a.style.color="red";
+            }else{
+                document.getElementById("age").style.backgroundColor="";
+                let a= document.getElementById("span3");
+                a.textContent="";
+                a.style.color="";
+            }
+
+
+             
+          
+        }
+
+    </script>
+</body>
+</html>

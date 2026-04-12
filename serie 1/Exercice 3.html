@@ -1,0 +1,23 @@
+<!doctype.HTML>
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<p id="sec"></p>
+<script>
+let s;
+do{
+s=parseInt(prompt("saisire la valeur en SECONDES"));}while(isNaN(s));
+let h=Math.floor( s/3600);
+let min=Math.floor((s%3600)/60);
+let S=Math.floor((s%3600)%60);
+let resul="H:"+h + " Min: "+min+" S: "+S ;
+
+document.getElementById("sec").innerHTML=resul;
+
+</script>
+</body>
+
+</html>

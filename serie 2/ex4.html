@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter something">
+    <button id="button" onclick="chonge()">Changer</button>
+    <input type="text" id="result" placeholder="Result">
+    <script>
+        function chonge(){
+            let input=document.getElementById("input").value;
+            let resu=input.split("").join("-");
+            document.getElementById("result").value=resu;
+        //     let input=document.getElementById("input").value;
+        //     let resu="";
+        //     for (let i=0;i<input.length;i++){
+        //         resu+=input.charAt(i) + "-";
+                
+        //     }
+        //     document.getElementById("result").value=resu;
+        }
+
+    </script>
+    
+</body>
+</html>

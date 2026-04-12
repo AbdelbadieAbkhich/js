@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="text" id="input1" placeholder="Enter first number">
+    <button onclick="EnMaj()">motEnMaj</button>
+    <input type="text" id="input2">
+    <script>
+        function EnMaj(){
+            let resu="";
+            var input=document.getElementById("input1").value;
+            let inp= input.split(" ");
+            for (let i=0;i<inp.lenght;i++){
+                resu+=inp[i].charAt(0).toUpperCase()+  inp[i].charAt(1).toLowerCase(); 
+
+            }
+            document.getElementById("input2").value=resu;
+        }
+    </script>
+</body>
+</html>

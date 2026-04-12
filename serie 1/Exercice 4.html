@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+</title>
+</head>
+
+<body>
+<p id ="res"></p>
+<script>
+let R;
+do{
+R=parseInt(prompt("sairire la valeur de Rayon :"));}while(isNaN(R));
+let cir_cercl=(2*4.14*R).toFixed(4);
+let sur_cercl=(3.14*R**2).toFixed(4);
+let sur_spher=(4*3.14*R**2).toFixed(4);
+let vol_spher=(4/(3*3.14*R**3)).toFixed(4);
+let a="La circonférence d’un cercle : "+cir_cercl+", La surface d’un cercle : "+sur_cercl+", La surface d’une sphère : "+sur_spher+" ,Le volume d’une sphère : " +vol_spher;
+document.getElementById("res").innerHTML=a 
+</script>
+</body>
+</HTML>

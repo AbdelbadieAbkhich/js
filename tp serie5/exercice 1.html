@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Event - Form</title>
+        <link rel="stylesheet" href="at1.css">
+    </head>
+    <body >
+        <input type="button" id="cacher" value="Cliquez pour cacher le texte" />
+        <div id="text">Text</div>
+        <input type="button" id="masquer" value="Cliquez pour masquer">
+        <script >
+            let btn=document.getElementById("cacher");
+            btn.addEventListener("click",function(){
+                let txt=document.getElementById("text");
+                txt.style.display="none"
+            })
+
+            let btn2=document.getElementById("masquer");
+            btn2.addEventListener("click",function(){
+                this.style.display="none"
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<input type"numbre" id="num" placeholder="saisire un nombre">
+<button onclick=paire()> Click ici </button>
+<script>
+let nom="abkhich" , prenom="abdelbadie";
+console.log(prenom+" "+ nom)
+let age=19;
+age=30;
+document.write(age+" "+":"+" " , typeof(age))+" ";
+
+
+
+const pi=3.14;
+ 
+console.log(pi)
+
+let prixHT =100, tv=0.20;
+document.write(prixHT + (prixHT*tv))
+
+prixHT+=(prixHT*tv)
+console.log(prixHT)
+let x=5 , y="5" ;
+if (x==y ){
+console.log("la meme valeur" + x +" "+y )
+}
+else {
+console.log("different valeur de : "+ x +"et"+ y)}
+let z=(x===y)? true:false;
+console.log("la meme type de " + x +"et"+ y+ ":"+ z)
+
+
+//let nombre=prompt("saisire un nombre")
+//if (nombre%2==0){
+//console.log(nombre+ " et paire")}
+
+//else{ console.log(nombre +"et impaire")}
+
+if (new Date().getHours()<=12){
+alert("bon jour")}
+else{
+alert("Bon aprés-midi !")}
+//let Age=19;
+//let resu=(Age>=18)? "majeure" : "mineure";
+//console.log(resu)
+//let A=prompt("saisire la premier valeur")
+//let B=prompt("saisire la 2emm valeur")
+//let c=(A>B)? A+"plus grand que "+B : B+"plus grand que "+A;
+//alert (c)
+let annee=prompt("saisire l'année")
+let Res=((annee%4==0 && annee%100!=0) || (annee%400==0))? annee+" est un année bissextile": annee + " n'est pas bissextile";
+console.log(Res)
+function paire(){
+let val= document.getElementById("num").value;
+let Val=(val%2==0)? val+" est paire" : val+" est impaire";
+window.alert(Val)}
+</script>
+</html>
