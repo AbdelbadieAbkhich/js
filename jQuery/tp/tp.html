@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jQuery/jQuery.js"></script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="e">OFPPT</li>
+            <li>CMC</li>
+            <li class="e">NTIC</li>
+        </ul>
+</nav>
+<section><form action="">
+    <label for="">Nom</label>
+
+    <input type="text" class="n1">
+    <label for="" id="t">Prenom</label>
+    <input type="text" class="n2">
+    <input type="button" value="tester">
+</form></section>
+
+
+
+    <script>
+        function cacher(){
+            $(".e").css("display","none");
+
+        }
+        cacher();
+        function nbr(){
+            alert("nombre des input dans la page c'est : "+$("input").length);
+
+        }
+        nbr();
+        $("input[type='button']").click(function afficher(){
+            alert("nom : "+ $(".n1").val()+" \nprenom : "+ $(".n2").val())
+        })
+
+        // jQuery(document).ready(function(){
+        //     alert("Hello World");
+        // });
+
+    </script>
+</body>
+</html>
